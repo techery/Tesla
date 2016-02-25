@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0015F9BC1C7ECDB000179FD9 /* TSLPipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */; };
+		00AA47671C7DB87500B2AD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47661C7DB87500B2AD56 /* main.m */; };
+		00AA476A1C7DB87500B2AD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47691C7DB87500B2AD56 /* AppDelegate.m */; };
+		00AA476D1C7DB87500B2AD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA476C1C7DB87500B2AD56 /* ViewController.m */; };
+		00AA47701C7DB87500B2AD56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00AA476E1C7DB87500B2AD56 /* Main.storyboard */; };
+		00AA47721C7DB87500B2AD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00AA47711C7DB87500B2AD56 /* Assets.xcassets */; };
+		00AA47751C7DB87500B2AD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00AA47731C7DB87500B2AD56 /* LaunchScreen.storyboard */; };
+		00AA477F1C7DB8F700B2AD56 /* TSLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA477E1C7DB8F700B2AD56 /* TSLOperation.m */; };
+		00AA478B1C7DBD7F00B2AD56 /* TSLOperationState.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA478A1C7DBD7F00B2AD56 /* TSLOperationState.m */; };
+		00AA478E1C7DC18200B2AD56 /* TSLCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA478D1C7DC18200B2AD56 /* TSLCondition.m */; };
+		00AA47911C7DC25B00B2AD56 /* TSLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47901C7DC25B00B2AD56 /* TSLAction.m */; };
+		00AA47941C7DC28800B2AD56 /* TSLChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47931C7DC28800B2AD56 /* TSLChainer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0015F9B51C7EC90900179FD9 /* TSLServiceRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceRequestProtocol.h; sourceTree = "<group>"; };
+		0015F9B61C7EC91A00179FD9 /* TSLServiceResponseProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceResponseProtocol.h; sourceTree = "<group>"; };
+		0015F9B71C7ECAB800179FD9 /* TSLServiceEventProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceEventProtocol.h; sourceTree = "<group>"; };
+		0015F9B81C7ECB0500179FD9 /* TSLEventServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLEventServiceProtocol.h; sourceTree = "<group>"; };
+		0015F9B91C7ECC2300179FD9 /* TSLEventServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLEventServiceDelegate.h; sourceTree = "<group>"; };
+		0015F9BA1C7ECDB000179FD9 /* TSLPipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLPipe.h; sourceTree = "<group>"; };
+		0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLPipe.m; sourceTree = "<group>"; };
+		00AA47621C7DB87500B2AD56 /* ServiceLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServiceLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00AA47661C7DB87500B2AD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00AA47681C7DB87500B2AD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		00AA47691C7DB87500B2AD56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		00AA476B1C7DB87500B2AD56 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		00AA476C1C7DB87500B2AD56 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		00AA476F1C7DB87500B2AD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00AA47711C7DB87500B2AD56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00AA47741C7DB87500B2AD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		00AA47761C7DB87500B2AD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00AA477D1C7DB8F700B2AD56 /* TSLOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLOperation.h; sourceTree = "<group>"; };
+		00AA477E1C7DB8F700B2AD56 /* TSLOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLOperation.m; sourceTree = "<group>"; };
+		00AA47891C7DBD7F00B2AD56 /* TSLOperationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLOperationState.h; sourceTree = "<group>"; };
+		00AA478A1C7DBD7F00B2AD56 /* TSLOperationState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLOperationState.m; sourceTree = "<group>"; };
+		00AA478C1C7DC18200B2AD56 /* TSLCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLCondition.h; sourceTree = "<group>"; };
+		00AA478D1C7DC18200B2AD56 /* TSLCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLCondition.m; sourceTree = "<group>"; };
+		00AA478F1C7DC25B00B2AD56 /* TSLAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLAction.h; sourceTree = "<group>"; };
+		00AA47901C7DC25B00B2AD56 /* TSLAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLAction.m; sourceTree = "<group>"; };
+		00AA47921C7DC28800B2AD56 /* TSLChainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLChainer.h; sourceTree = "<group>"; };
+		00AA47931C7DC28800B2AD56 /* TSLChainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLChainer.m; sourceTree = "<group>"; };
+		00AA47981C7DE27D00B2AD56 /* TSLServiceLocatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceLocatorProtocol.h; sourceTree = "<group>"; };
+		00AA47991C7DE29500B2AD56 /* TSLQueryableServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLQueryableServiceProtocol.h; sourceTree = "<group>"; };
+		00AA479A1C7DE2A400B2AD56 /* TSLQueryableServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLQueryableServiceDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00AA475F1C7DB87500B2AD56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00AA47591C7DB87500B2AD56 = {
+			isa = PBXGroup;
+			children = (
+				00AA47631C7DB87500B2AD56 /* Products */,
+				00AA47641C7DB87500B2AD56 /* ServiceLayer */,
+			);
+			sourceTree = "<group>";
+		};
+		00AA47631C7DB87500B2AD56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00AA47621C7DB87500B2AD56 /* ServiceLayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00AA47641C7DB87500B2AD56 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				00AA47651C7DB87500B2AD56 /* Supporting Files */,
+				00AA477C1C7DB88700B2AD56 /* Tesla */,
+				00AA47681C7DB87500B2AD56 /* AppDelegate.h */,
+				00AA47691C7DB87500B2AD56 /* AppDelegate.m */,
+				00AA47711C7DB87500B2AD56 /* Assets.xcassets */,
+				00AA47761C7DB87500B2AD56 /* Info.plist */,
+				00AA47731C7DB87500B2AD56 /* LaunchScreen.storyboard */,
+				00AA476E1C7DB87500B2AD56 /* Main.storyboard */,
+				00AA476B1C7DB87500B2AD56 /* ViewController.h */,
+				00AA476C1C7DB87500B2AD56 /* ViewController.m */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		00AA47651C7DB87500B2AD56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00AA47661C7DB87500B2AD56 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00AA477C1C7DB88700B2AD56 /* Tesla */ = {
+			isa = PBXGroup;
+			children = (
+				00AA478F1C7DC25B00B2AD56 /* TSLAction.h */,
+				00AA47901C7DC25B00B2AD56 /* TSLAction.m */,
+				00AA47921C7DC28800B2AD56 /* TSLChainer.h */,
+				00AA47931C7DC28800B2AD56 /* TSLChainer.m */,
+				00AA478C1C7DC18200B2AD56 /* TSLCondition.h */,
+				00AA478D1C7DC18200B2AD56 /* TSLCondition.m */,
+				0015F9B91C7ECC2300179FD9 /* TSLEventServiceDelegate.h */,
+				0015F9B81C7ECB0500179FD9 /* TSLEventServiceProtocol.h */,
+				00AA477D1C7DB8F700B2AD56 /* TSLOperation.h */,
+				00AA477E1C7DB8F700B2AD56 /* TSLOperation.m */,
+				00AA47891C7DBD7F00B2AD56 /* TSLOperationState.h */,
+				00AA478A1C7DBD7F00B2AD56 /* TSLOperationState.m */,
+				0015F9BA1C7ECDB000179FD9 /* TSLPipe.h */,
+				0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */,
+				00AA479A1C7DE2A400B2AD56 /* TSLQueryableServiceDelegate.h */,
+				00AA47991C7DE29500B2AD56 /* TSLQueryableServiceProtocol.h */,
+				0015F9B71C7ECAB800179FD9 /* TSLServiceEventProtocol.h */,
+				00AA47981C7DE27D00B2AD56 /* TSLServiceLocatorProtocol.h */,
+				0015F9B51C7EC90900179FD9 /* TSLServiceRequestProtocol.h */,
+				0015F9B61C7EC91A00179FD9 /* TSLServiceResponseProtocol.h */,
+			);
+			path = Tesla;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00AA47611C7DB87500B2AD56 /* ServiceLayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00AA47791C7DB87500B2AD56 /* Build configuration list for PBXNativeTarget "ServiceLayer" */;
+			buildPhases = (
+				00AA475E1C7DB87500B2AD56 /* Sources */,
+				00AA475F1C7DB87500B2AD56 /* Frameworks */,
+				00AA47601C7DB87500B2AD56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ServiceLayer;
+			productName = ServiceLayer;
+			productReference = 00AA47621C7DB87500B2AD56 /* ServiceLayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00AA475A1C7DB87500B2AD56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TSL;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Petro Korienev";
+				TargetAttributes = {
+					00AA47611C7DB87500B2AD56 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 00AA475D1C7DB87500B2AD56 /* Build configuration list for PBXProject "ServiceLayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00AA47591C7DB87500B2AD56;
+			productRefGroup = 00AA47631C7DB87500B2AD56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00AA47611C7DB87500B2AD56 /* ServiceLayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00AA47601C7DB87500B2AD56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00AA47751C7DB87500B2AD56 /* LaunchScreen.storyboard in Resources */,
+				00AA47721C7DB87500B2AD56 /* Assets.xcassets in Resources */,
+				00AA47701C7DB87500B2AD56 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00AA475E1C7DB87500B2AD56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00AA47941C7DC28800B2AD56 /* TSLChainer.m in Sources */,
+				00AA476D1C7DB87500B2AD56 /* ViewController.m in Sources */,
+				00AA476A1C7DB87500B2AD56 /* AppDelegate.m in Sources */,
+				00AA47671C7DB87500B2AD56 /* main.m in Sources */,
+				0015F9BC1C7ECDB000179FD9 /* TSLPipe.m in Sources */,
+				00AA478B1C7DBD7F00B2AD56 /* TSLOperationState.m in Sources */,
+				00AA47911C7DC25B00B2AD56 /* TSLAction.m in Sources */,
+				00AA477F1C7DB8F700B2AD56 /* TSLOperation.m in Sources */,
+				00AA478E1C7DC18200B2AD56 /* TSLCondition.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		00AA476E1C7DB87500B2AD56 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00AA476F1C7DB87500B2AD56 /* Base */,
+			);
+			name = Main.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+		00AA47731C7DB87500B2AD56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00AA47741C7DB87500B2AD56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00AA47771C7DB87500B2AD56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		00AA47781C7DB87500B2AD56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00AA477A1C7DB87500B2AD56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ServiceLayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.techery.ServiceLayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		00AA477B1C7DB87500B2AD56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ServiceLayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.techery.ServiceLayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00AA475D1C7DB87500B2AD56 /* Build configuration list for PBXProject "ServiceLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00AA47771C7DB87500B2AD56 /* Debug */,
+				00AA47781C7DB87500B2AD56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00AA47791C7DB87500B2AD56 /* Build configuration list for PBXNativeTarget "ServiceLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00AA477A1C7DB87500B2AD56 /* Debug */,
+				00AA477B1C7DB87500B2AD56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00AA475A1C7DB87500B2AD56 /* Project object */;
+}
