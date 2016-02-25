@@ -11,7 +11,7 @@
 #import "TSLAction.h"
 #import "TSLChainer.h"
 #import "TSLOperationState.h"
-#import "TSLServiceLocatorProtocol.h"
+#import "Tesla.h"
 #import "TSLQueryableServiceProtocol.h"
 #import "TSLServiceRequestProtocol.h"
 #import "TSLServiceResponseProtocol.h"
@@ -45,8 +45,7 @@
     self = [super init];
     if (self) {
         self.chainers = [NSMutableArray new];
-//      Assign or inject
-//        self.serviceLocator =
+        self.serviceLocator = [Tesla sharedInstance];
     }
     return self;
 }

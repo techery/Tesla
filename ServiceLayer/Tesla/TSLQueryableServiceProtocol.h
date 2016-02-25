@@ -14,10 +14,12 @@
 
 @protocol TSLQueryableServiceProtocol <NSObject>
 
-- (void)addDelegate:(id<TSLQueryableServiceDelegate>)delegate;
-- (void)removeDelegate:(id<TSLQueryableServiceDelegate>)delegate;
-- (void)addRequest:(id<TSLServiceRequestProtocol>)request
-  responseTemplate:(id<TSLServiceResponseProtocol>)responseTemplate;
-- (void)cancelRequest:(id<TSLServiceRequestProtocol>)request;
+- (void)addDelegate:(id<TSLQueryableServiceDelegate> _Nonnull)delegate;
+- (void)removeDelegate:(id<TSLQueryableServiceDelegate> _Nonnull)delegate;
+- (void)addRequest:(id<TSLServiceRequestProtocol> _Nonnull)request
+  responseTemplate:(id<TSLServiceResponseProtocol> _Nullable)responseTemplate;
+- (void)cancelRequest:(id<TSLServiceRequestProtocol> _Nonnull)request;
+- (BOOL)canHandleRequest:(id<TSLServiceRequestProtocol> _Nonnull)request
+                response:(id<TSLServiceResponseProtocol> _Nullable)response;
 
 @end

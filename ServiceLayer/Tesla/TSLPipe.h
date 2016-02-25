@@ -14,6 +14,12 @@
 typedef void(^TSLPipeEventBlock)(TSLPipe<Event> * _Nonnull pipe, _Nonnull Event event);
 
 + (nonnull instancetype)pipeWithEventClass:(_Nonnull Class<TSLServiceEventProtocol>)eventClass
-                                    filter:(NSPredicate * _Nullable)filter;
+                                    filter:(NSPredicate * _Nullable)filter
+                                eventBlock:(_Nonnull TSLPipeEventBlock)eventBlock;
+
+- (void)start;
+- (void)suspend;
+- (void)resume;
+- (void)stop;
 
 @end

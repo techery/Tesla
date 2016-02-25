@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0015F9BC1C7ECDB000179FD9 /* TSLPipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */; };
+		0015F9C21C7F98BE00179FD9 /* Tesla.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9C11C7F98BE00179FD9 /* Tesla.m */; };
 		00AA47671C7DB87500B2AD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47661C7DB87500B2AD56 /* main.m */; };
 		00AA476A1C7DB87500B2AD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47691C7DB87500B2AD56 /* AppDelegate.m */; };
 		00AA476D1C7DB87500B2AD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA476C1C7DB87500B2AD56 /* ViewController.m */; };
@@ -29,6 +30,9 @@
 		0015F9B91C7ECC2300179FD9 /* TSLEventServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLEventServiceDelegate.h; sourceTree = "<group>"; };
 		0015F9BA1C7ECDB000179FD9 /* TSLPipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLPipe.h; sourceTree = "<group>"; };
 		0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLPipe.m; sourceTree = "<group>"; };
+		0015F9C01C7F98BE00179FD9 /* Tesla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tesla.h; sourceTree = "<group>"; };
+		0015F9C11C7F98BE00179FD9 /* Tesla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tesla.m; sourceTree = "<group>"; };
+		0015F9C31C7F9DA900179FD9 /* TSLServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceProtocol.h; sourceTree = "<group>"; };
 		00AA47621C7DB87500B2AD56 /* ServiceLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServiceLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AA47661C7DB87500B2AD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00AA47681C7DB87500B2AD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,10 +129,13 @@
 				0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */,
 				00AA479A1C7DE2A400B2AD56 /* TSLQueryableServiceDelegate.h */,
 				00AA47991C7DE29500B2AD56 /* TSLQueryableServiceProtocol.h */,
+				0015F9C31C7F9DA900179FD9 /* TSLServiceProtocol.h */,
 				0015F9B71C7ECAB800179FD9 /* TSLServiceEventProtocol.h */,
 				00AA47981C7DE27D00B2AD56 /* TSLServiceLocatorProtocol.h */,
 				0015F9B51C7EC90900179FD9 /* TSLServiceRequestProtocol.h */,
 				0015F9B61C7EC91A00179FD9 /* TSLServiceResponseProtocol.h */,
+				0015F9C01C7F98BE00179FD9 /* Tesla.h */,
+				0015F9C11C7F98BE00179FD9 /* Tesla.m */,
 			);
 			path = Tesla;
 			sourceTree = "<group>";
@@ -212,6 +219,7 @@
 				00AA478B1C7DBD7F00B2AD56 /* TSLOperationState.m in Sources */,
 				00AA47911C7DC25B00B2AD56 /* TSLAction.m in Sources */,
 				00AA477F1C7DB8F700B2AD56 /* TSLOperation.m in Sources */,
+				0015F9C21C7F98BE00179FD9 /* Tesla.m in Sources */,
 				00AA478E1C7DC18200B2AD56 /* TSLCondition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

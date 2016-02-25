@@ -10,14 +10,24 @@
 
 @protocol TSLQueryableServiceProtocol;
 @protocol TSLEventServiceProtocol;
+@protocol TSLServiceProtocol;
 @protocol TSLServiceRequestProtocol;
 @protocol TSLServiceResponseProtocol;
 @protocol TSLServiceEventProtocol;
 
 @protocol TSLServiceLocatorProtocol <NSObject>
 
-- (id<TSLQueryableServiceProtocol>)queryableServiceForRequest:(id<TSLServiceRequestProtocol>)request
-                                                     response:(id<TSLServiceResponseProtocol>)response;
-- (id<TSLEventServiceProtocol>)eventServiceForEventClass:(Class<TSLServiceEventProtocol>)eventClass;
+- (nullable id<TSLQueryableServiceProtocol>)queryableServiceForRequest:(id<TSLServiceRequestProtocol> _Nonnull)request
+                                                              response:(id<TSLServiceResponseProtocol> _Nullable)response;
+- (nullable id<TSLEventServiceProtocol>)eventServiceForEventClass:(Class<TSLServiceEventProtocol> _Nonnull)eventClass;
+
+- (void)registerService:(id<TSLServiceProtocol> _Nonnull)service;
+- (void)unregisterService:(id<TSLServiceProtocol> _Nonnull)service;
+
+- (void)registerQueryableService:(id<TSLQueryableServiceProtocol> _Nonnull)service;
+- (void)unregisterQueryableService:(id<TSLQueryableServiceProtocol> _Nonnull)service;
+
+- (void)registerEventService:(id<TSLEventServiceProtocol> _Nonnull)service;
+- (void)unregisterEventService:(id<TSLEventServiceProtocol> _Nonnull)service;
 
 @end

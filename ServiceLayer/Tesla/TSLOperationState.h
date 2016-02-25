@@ -18,14 +18,14 @@ typedef NS_ENUM(NSUInteger, TSLOperationStateEnum) {
 
 @interface TSLOperationState : NSObject
 
-+ (instancetype)initialState;
-+ (instancetype)startedState;
-+ (instancetype)completedState;
-+ (instancetype)cancelledState;
-+ (instancetype)errorState;
-+ (instancetype)stateWithProgress:(float)progress; // TSLOperationStateStarted by default
-+ (instancetype)stateWithProgress:(float)progress
-                       stateValue:(TSLOperationStateEnum)stateValue;
++ (nonnull instancetype)initialState;
++ (nonnull instancetype)startedState;
++ (nonnull instancetype)completedState;
++ (nonnull instancetype)cancelledState;
++ (nonnull instancetype)errorState;
++ (nonnull instancetype)stateWithProgress:(float)progress; // TSLOperationStateStarted by default
++ (nonnull instancetype)stateWithProgress:(float)progress
+                               stateValue:(TSLOperationStateEnum)stateValue;
 
 @property (nonatomic, assign, readonly) TSLOperationStateEnum stateValue;
 @property (nonatomic, assign, readonly) float progress;

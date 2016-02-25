@@ -12,7 +12,8 @@
 
 @protocol TSLEventServiceProtocol <NSObject>
 
-- (void)addDelegate:(id<TSLEventServiceDelegate>)delegate;
-- (void)removeDelegate:(id<TSLEventServiceDelegate>)delegate;
+- (void)addDelegate:(id<TSLEventServiceDelegate> _Nonnull)delegate;
+- (void)removeDelegate:(id<TSLEventServiceDelegate> _Nonnull)delegate;
+- (BOOL)canFireEventsOfClass:(Class<TSLServiceEventProtocol> _Nonnull)eventClass;
 
 @end

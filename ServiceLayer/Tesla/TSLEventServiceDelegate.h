@@ -13,7 +13,7 @@
 
 @protocol TSLEventServiceDelegate <NSObject>
 
-- (void)service:(id<TSLEventServiceProtocol>)service
-   didFireEvent:(id<TSLServiceEventProtocol>)event;
+- (void)service:(id<TSLEventServiceProtocol> _Nonnull)service
+   didFireEvent:(id<TSLServiceEventProtocol> _Nonnull)event;
 
 @end
