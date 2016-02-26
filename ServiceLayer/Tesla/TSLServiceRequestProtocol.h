@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol TSLServiceResponseProtocol;
+
 @protocol TSLServiceRequestProtocol <NSObject>
+
+- (nonnull id<TSLServiceResponseProtocol>)associatedResponse;
+- (nonnull NSError *)error;
 
 @end

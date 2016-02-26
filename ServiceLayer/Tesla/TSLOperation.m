@@ -20,8 +20,8 @@
     TSLOperationState *_currentState;
 }
 
-@property (nonatomic, strong) id<TSLServiceLocatorProtocol> serviceLocator;
-@property (nonatomic, strong) id<TSLQueryableServiceProtocol> service;
+@property (nonatomic, weak) id<TSLServiceLocatorProtocol> serviceLocator;
+@property (nonatomic, weak) id<TSLQueryableServiceProtocol> service;
 
 @property (nonatomic, strong) id error;
 @property (nonatomic, strong) id response;
@@ -32,6 +32,8 @@
 @end
 
 @implementation TSLOperation
+
+#pragma mark - lifecycle & state management
 
 + (instancetype)operationWithRequest:(id)request responseTemplate:(id)responseTemplate {
     TSLOperation *operation = [self new];
@@ -50,15 +52,29 @@
     return self;
 }
 
+- (void)dealloc {
+    [self cancelInternal];
+}
+
 - (void)run {
     dispatch_async(dispatch_get_global_queue(0, 0), ^() {
         self.service = [self.serviceLocator queryableServiceForRequest:self.executingRequest
                                                               response:self.response];
+        [self.service addDelegate:self];
+        [self.service addRequest:self.executingRequest
+                responseTemplate:self.response];
     });
 }
 
 - (void)cancel {
-    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^() {
+        [self cancelInternal];
+    });
+}
+
+- (void)cancelInternal {
+    [self.service cancelRequest:self.executingRequest];
+    [self.service removeDelegate:self];
 }
 
 - (void)on:(TSLOperationState *)state run:(TSLOperation *)operation {
@@ -83,20 +99,52 @@
     [self.chainers addObject:chainer];
 }
 
-- (void)setCurrentState:(TSLOperationState *)currentState {
-    _currentState = currentState;
-}
-
-- (TSLOperationState *)currentState {
-    return _currentState;
-}
-
 #pragma mark - TSLQueryableServiceDelegate
 
-- (void)service:(id<TSLQueryableServiceProtocol>)service
- didChangeState:(TSLOperationState *)state
-     forRequest:(id<TSLServiceRequestProtocol>)request {
-    
+- (void)service:(id<TSLQueryableServiceProtocol> _Nonnull)service
+ didChangeState:(TSLOperationState * _Nonnull)state
+     forRequest:(id<TSLServiceRequestProtocol> _Nonnull)request {
+    if (request == self.executingRequest) {
+        self.currentState = state;
+        self.response = [request associatedResponse];
+        self.error = [request error];
+        [self verifyChainersAgainstState:state];
+        [self verifyOperationAgainstState:state];
+    }
+}
+
+#pragma mark - State handling
+
+- (void)verifyChainersAgainstState:(TSLOperationState *)currentState {
+    for (TSLChainer<TSLCondition *, TSLAction *> *chainer in self.chainers) {
+        if ([chainer.chainingCondition evaluateAgainstState:currentState]) {
+            [chainer.chainingAction run];
+        }
+    }
+}
+
+- (void)verifyOperationAgainstState:(TSLOperationState *)currentState {
+    [self verifyOperationAgainstStateCancelled:currentState];
+    [self verifyOperationAgainstStateCompleted:currentState];
+    [self verifyOperationAgainstStateError:currentState];
+}
+
+- (void)verifyOperationAgainstStateCancelled:(TSLOperationState *)currentState {
+    if (currentState.stateValue == TSLOperationStateCancelled) {
+        [self.service removeDelegate:self];
+    }
+}
+
+- (void)verifyOperationAgainstStateCompleted:(TSLOperationState *)currentState {
+    if (currentState.stateValue == TSLOperationStateCompleted) {
+        [self.service removeDelegate:self];
+    }
+}
+
+- (void)verifyOperationAgainstStateError:(TSLOperationState *)currentState {
+    if (currentState.stateValue == TSLOperationStateError) {
+        [self.service removeDelegate:self];
+    }
 }
 
 @end

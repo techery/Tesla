@@ -22,4 +22,6 @@ typedef void(^TSLPipeEventBlock)(TSLPipe<Event> * _Nonnull pipe, _Nonnull Event 
 - (void)resume;
 - (void)stop;
 
+@property (atomic, assign, readonly) BOOL isSuspended;
+
 @end

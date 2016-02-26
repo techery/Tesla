@@ -59,4 +59,8 @@
     return state;
 }
 
+- (BOOL)isEqual:(TSLOperationState *)obj {
+    return ([obj isKindOfClass:[self class]] && self.stateValue == obj.stateValue && self.progress == obj.progress);
+}
+
 @end

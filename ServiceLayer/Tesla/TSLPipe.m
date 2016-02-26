@@ -8,14 +8,19 @@
 
 #import "TSLPipe.h"
 
+#import "TSLEventServiceProtocol.h"
 #import "TSLServiceEventProtocol.h"
 #import "Tesla.h"
 
 @interface TSLPipe ()
 
+@property (nonatomic, weak) id<TSLServiceLocatorProtocol> serviceLocator;
+@property (nonatomic, weak) id<TSLEventServiceProtocol> service;
+
 @property (nonatomic, assign, nonnull) Class<TSLServiceEventProtocol> eventClass;
 @property (nonatomic, strong, nullable) NSPredicate *filter;
 @property (nonatomic, copy, nonnull) TSLPipeEventBlock eventBlock;
+@property (atomic, assign, readwrite) BOOL isSuspended;
 
 @end
 
@@ -30,33 +35,47 @@
     pipe.eventClass = eventClass;
     pipe.filter = filter;
     pipe.eventBlock = eventBlock;
+    pipe.serviceLocator = [Tesla sharedInstance];
     return pipe;
 }
 
+- (void)dealloc {
+    [self stop];
+}
+
 - (void)start {
-    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^() {
+        self.service = [self.serviceLocator eventServiceForEventClass:self.eventClass];
+        [self.service addDelegate:self];
+    });
 }
 
 - (void)suspend {
-    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^() {
+        self.isSuspended = YES;
+    });
 }
 
 - (void)resume {
-    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^() {
+        self.isSuspended = NO;
+    });
 }
 
 - (void)stop {
-    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^() {
+        [self.service removeDelegate:self];
+    });
 }
 
 #pragma mark - TSLEventServiceDelegate
 
 - (void)service:(id<TSLEventServiceProtocol>)service
    didFireEvent:(id<TSLServiceEventProtocol>)event {
-    if ([event isKindOfClass:self.eventClass]) {
-        if (!self.filter || [self.filter evaluateWithObject:event]) {
-            self.eventBlock(self, event);
-        }
+    if (!self.isSuspended &&
+        [event isKindOfClass:self.eventClass] &&
+        (!self.filter || [self.filter evaluateWithObject:event])) {
+        self.eventBlock(self, event);
     }
 }
 

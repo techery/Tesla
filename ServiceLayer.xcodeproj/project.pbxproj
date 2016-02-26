@@ -168,7 +168,7 @@
 			attributes = {
 				CLASSPREFIX = TSL;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Petro Korienev";
+				ORGANIZATIONNAME = Techery;
 				TargetAttributes = {
 					00AA47611C7DB87500B2AD56 = {
 						CreatedOnToolsVersion = 7.2;

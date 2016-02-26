@@ -10,9 +10,9 @@
 #import "TSLQueryableServiceDelegate.h"
 #import "TSLCondition.h"
 
-@interface TSLOperation<Request, State, Response, Error> : NSObject <TSLQueryableServiceDelegate>
+@interface TSLOperation<Request, State, Response> : NSObject <TSLQueryableServiceDelegate>
 
-- (nullable Error)error;
+- (nullable NSError *)error;
 - (nullable Response)response;
 - (nonnull Request)executingRequest;
 - (nonnull State)currentState;

@@ -31,10 +31,18 @@
 }
 
 - (void)run {
+    [self runBlockIfPossible];
+    [self runOperationIfPossible];
+}
+
+- (void)runBlockIfPossible {
     if (self.block) {
         self.block();
     }
-    else if (self.operation) {
+}
+
+- (void)runOperationIfPossible {
+    if (self.operation) {
         [self.operation run];
     }
 }
