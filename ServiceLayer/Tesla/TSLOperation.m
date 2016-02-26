@@ -60,7 +60,7 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^() {
         self.service = [self.serviceLocator queryableServiceForRequest:self.executingRequest
                                                               response:self.response];
-        [self.service addDelegate:self];
+        [self.service addRequestDelegate:self];
         [self.service addRequest:self.executingRequest
                 responseTemplate:self.response];
     });
@@ -74,7 +74,7 @@
 
 - (void)cancelInternal {
     [self.service cancelRequest:self.executingRequest];
-    [self.service removeDelegate:self];
+    [self.service removeRequestDelegate:self];
 }
 
 - (void)on:(TSLOperationState *)state run:(TSLOperation *)operation {
@@ -131,19 +131,19 @@
 
 - (void)verifyOperationAgainstStateCancelled:(TSLOperationState *)currentState {
     if (currentState.stateValue == TSLOperationStateCancelled) {
-        [self.service removeDelegate:self];
+        [self.service removeRequestDelegate:self];
     }
 }
 
 - (void)verifyOperationAgainstStateCompleted:(TSLOperationState *)currentState {
     if (currentState.stateValue == TSLOperationStateCompleted) {
-        [self.service removeDelegate:self];
+        [self.service removeRequestDelegate:self];
     }
 }
 
 - (void)verifyOperationAgainstStateError:(TSLOperationState *)currentState {
     if (currentState.stateValue == TSLOperationStateError) {
-        [self.service removeDelegate:self];
+        [self.service removeRequestDelegate:self];
     }
 }
 

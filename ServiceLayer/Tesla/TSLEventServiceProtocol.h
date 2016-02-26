@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @protocol TSLEventServiceDelegate;
+@protocol TSLServiceEventProtocol;
 
 @protocol TSLEventServiceProtocol <NSObject>
 
-- (void)addDelegate:(id<TSLEventServiceDelegate> _Nonnull)delegate;
-- (void)removeDelegate:(id<TSLEventServiceDelegate> _Nonnull)delegate;
+- (void)addEventDelegate:(id<TSLEventServiceDelegate> _Nonnull)delegate;
+- (void)removeEventDelegate:(id<TSLEventServiceDelegate> _Nonnull)delegate;
 - (BOOL)canFireEventsOfClass:(Class<TSLServiceEventProtocol> _Nonnull)eventClass;
 
 @end

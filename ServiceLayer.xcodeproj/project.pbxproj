@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		0015F9BC1C7ECDB000179FD9 /* TSLPipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */; };
 		0015F9C21C7F98BE00179FD9 /* Tesla.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9C11C7F98BE00179FD9 /* Tesla.m */; };
+		0015F9CF1C80B69100179FD9 /* RESTService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9CE1C80B69100179FD9 /* RESTService.m */; };
+		0015F9D21C80B6C200179FD9 /* XMPPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D11C80B6C200179FD9 /* XMPPService.m */; };
+		0015F9D51C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */; };
+		0015F9D81C80BD3A00179FD9 /* TSLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D71C80BD3A00179FD9 /* TSLService.m */; };
+		0015F9E01C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m */; };
+		0015F9E71C80CD6700179FD9 /* TSLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47901C7DC25B00B2AD56 /* TSLAction.m */; };
+		0015F9E81C80CD6700179FD9 /* TSLChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47931C7DC28800B2AD56 /* TSLChainer.m */; };
+		0015F9E91C80CD6700179FD9 /* TSLCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA478D1C7DC18200B2AD56 /* TSLCondition.m */; };
+		0015F9EA1C80CD6700179FD9 /* TSLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA477E1C7DB8F700B2AD56 /* TSLOperation.m */; };
+		0015F9EB1C80CD6700179FD9 /* TSLOperationState.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA478A1C7DBD7F00B2AD56 /* TSLOperationState.m */; };
+		0015F9EC1C80CD6700179FD9 /* TSLPipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */; };
+		0015F9ED1C80CD6700179FD9 /* Tesla.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9C11C7F98BE00179FD9 /* Tesla.m */; };
+		0015F9EE1C80CD6700179FD9 /* TSLServiceMulticastDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */; };
+		0015F9EF1C80CD6700179FD9 /* TSLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D71C80BD3A00179FD9 /* TSLService.m */; };
 		00AA47671C7DB87500B2AD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47661C7DB87500B2AD56 /* main.m */; };
 		00AA476A1C7DB87500B2AD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47691C7DB87500B2AD56 /* AppDelegate.m */; };
 		00AA476D1C7DB87500B2AD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA476C1C7DB87500B2AD56 /* ViewController.m */; };
@@ -20,7 +34,20 @@
 		00AA478E1C7DC18200B2AD56 /* TSLCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA478D1C7DC18200B2AD56 /* TSLCondition.m */; };
 		00AA47911C7DC25B00B2AD56 /* TSLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47901C7DC25B00B2AD56 /* TSLAction.m */; };
 		00AA47941C7DC28800B2AD56 /* TSLChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47931C7DC28800B2AD56 /* TSLChainer.m */; };
+		5BB3051934BC735D8F56CC66 /* Pods_TeslaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB022CE39EB663A0307EE85 /* Pods_TeslaTests.framework */; };
+		C08BEF7BF562FF43C59507BE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3E45970EBC0A5F58D7B02A /* Pods.framework */; };
+		E56FCE2D47735F1EE14405C1 /* Pods_ServiceLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153ED911A6DB8111E22DFE45 /* Pods_ServiceLayer.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0015F9E21C80CD2500179FD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00AA475A1C7DB87500B2AD56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00AA47611C7DB87500B2AD56;
+			remoteInfo = ServiceLayer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0015F9B51C7EC90900179FD9 /* TSLServiceRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceRequestProtocol.h; sourceTree = "<group>"; };
@@ -33,6 +60,17 @@
 		0015F9C01C7F98BE00179FD9 /* Tesla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tesla.h; sourceTree = "<group>"; };
 		0015F9C11C7F98BE00179FD9 /* Tesla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tesla.m; sourceTree = "<group>"; };
 		0015F9C31C7F9DA900179FD9 /* TSLServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceProtocol.h; sourceTree = "<group>"; };
+		0015F9CD1C80B69100179FD9 /* RESTService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTService.h; sourceTree = "<group>"; };
+		0015F9CE1C80B69100179FD9 /* RESTService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTService.m; sourceTree = "<group>"; };
+		0015F9D01C80B6C200179FD9 /* XMPPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPService.h; sourceTree = "<group>"; };
+		0015F9D11C80B6C200179FD9 /* XMPPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPService.m; sourceTree = "<group>"; };
+		0015F9D31C80BD0A00179FD9 /* TSLServiceMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceMulticastDelegate.h; sourceTree = "<group>"; };
+		0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TSLServiceMulticastDelegate.mm; sourceTree = "<group>"; };
+		0015F9D61C80BD3A00179FD9 /* TSLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLService.h; sourceTree = "<group>"; };
+		0015F9D71C80BD3A00179FD9 /* TSLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLService.m; sourceTree = "<group>"; };
+		0015F9DD1C80CD2500179FD9 /* TeslaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeslaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSLServiceMulticastDelegateSpec.m; sourceTree = "<group>"; };
+		0015F9E11C80CD2500179FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00AA47621C7DB87500B2AD56 /* ServiceLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServiceLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AA47661C7DB87500B2AD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00AA47681C7DB87500B2AD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,24 +94,64 @@
 		00AA47981C7DE27D00B2AD56 /* TSLServiceLocatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceLocatorProtocol.h; sourceTree = "<group>"; };
 		00AA47991C7DE29500B2AD56 /* TSLQueryableServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLQueryableServiceProtocol.h; sourceTree = "<group>"; };
 		00AA479A1C7DE2A400B2AD56 /* TSLQueryableServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLQueryableServiceDelegate.h; sourceTree = "<group>"; };
+		153ED911A6DB8111E22DFE45 /* Pods_ServiceLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EBC71F14171475B9076DDF4 /* Pods-TeslaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeslaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeslaTests/Pods-TeslaTests.release.xcconfig"; sourceTree = "<group>"; };
+		2BB022CE39EB663A0307EE85 /* Pods_TeslaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeslaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72331DB89223E3B6BC29C76E /* Pods-ServiceLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceLayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ServiceLayer/Pods-ServiceLayer.release.xcconfig"; sourceTree = "<group>"; };
+		BF562090362AD92EABAFF5E5 /* Pods-TeslaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeslaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeslaTests/Pods-TeslaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF1E13D0690466A1CCF64A10 /* Pods-ServiceLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceLayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ServiceLayer/Pods-ServiceLayer.debug.xcconfig"; sourceTree = "<group>"; };
+		EA3E45970EBC0A5F58D7B02A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0015F9DA1C80CD2500179FD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB3051934BC735D8F56CC66 /* Pods_TeslaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00AA475F1C7DB87500B2AD56 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08BEF7BF562FF43C59507BE /* Pods.framework in Frameworks */,
+				E56FCE2D47735F1EE14405C1 /* Pods_ServiceLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0015F9CC1C80B65F00179FD9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0015F9CD1C80B69100179FD9 /* RESTService.h */,
+				0015F9CE1C80B69100179FD9 /* RESTService.m */,
+				0015F9D01C80B6C200179FD9 /* XMPPService.h */,
+				0015F9D11C80B6C200179FD9 /* XMPPService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		0015F9DE1C80CD2500179FD9 /* TeslaTests */ = {
+			isa = PBXGroup;
+			children = (
+				0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m */,
+				0015F9E11C80CD2500179FD9 /* Info.plist */,
+			);
+			path = TeslaTests;
+			sourceTree = "<group>";
+		};
 		00AA47591C7DB87500B2AD56 = {
 			isa = PBXGroup;
 			children = (
+				0015F9DE1C80CD2500179FD9 /* TeslaTests */,
 				00AA47631C7DB87500B2AD56 /* Products */,
 				00AA47641C7DB87500B2AD56 /* ServiceLayer */,
+				2E44BE45F5A201C1DA22E8BE /* Pods */,
+				56FD12EC428A91EF771E7E3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				00AA47621C7DB87500B2AD56 /* ServiceLayer.app */,
+				0015F9DD1C80CD2500179FD9 /* TeslaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +167,7 @@
 		00AA47641C7DB87500B2AD56 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0015F9CC1C80B65F00179FD9 /* Services */,
 				00AA47651C7DB87500B2AD56 /* Supporting Files */,
 				00AA477C1C7DB88700B2AD56 /* Tesla */,
 				00AA47681C7DB87500B2AD56 /* AppDelegate.h */,
@@ -136,20 +216,69 @@
 				0015F9B61C7EC91A00179FD9 /* TSLServiceResponseProtocol.h */,
 				0015F9C01C7F98BE00179FD9 /* Tesla.h */,
 				0015F9C11C7F98BE00179FD9 /* Tesla.m */,
+				0015F9D31C80BD0A00179FD9 /* TSLServiceMulticastDelegate.h */,
+				0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */,
+				0015F9D61C80BD3A00179FD9 /* TSLService.h */,
+				0015F9D71C80BD3A00179FD9 /* TSLService.m */,
 			);
 			path = Tesla;
+			sourceTree = "<group>";
+		};
+		2E44BE45F5A201C1DA22E8BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF562090362AD92EABAFF5E5 /* Pods-TeslaTests.debug.xcconfig */,
+				1EBC71F14171475B9076DDF4 /* Pods-TeslaTests.release.xcconfig */,
+				CF1E13D0690466A1CCF64A10 /* Pods-ServiceLayer.debug.xcconfig */,
+				72331DB89223E3B6BC29C76E /* Pods-ServiceLayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		56FD12EC428A91EF771E7E3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA3E45970EBC0A5F58D7B02A /* Pods.framework */,
+				153ED911A6DB8111E22DFE45 /* Pods_ServiceLayer.framework */,
+				2BB022CE39EB663A0307EE85 /* Pods_TeslaTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0015F9DC1C80CD2500179FD9 /* TeslaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0015F9E41C80CD2500179FD9 /* Build configuration list for PBXNativeTarget "TeslaTests" */;
+			buildPhases = (
+				91C4F199F1E8EDDA270AFCE8 /* Check Pods Manifest.lock */,
+				0015F9D91C80CD2500179FD9 /* Sources */,
+				0015F9DA1C80CD2500179FD9 /* Frameworks */,
+				0015F9DB1C80CD2500179FD9 /* Resources */,
+				E9086DF715AA0AAC547D3A26 /* Embed Pods Frameworks */,
+				E4DD7D267C55B3598C170C7A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0015F9E31C80CD2500179FD9 /* PBXTargetDependency */,
+			);
+			name = TeslaTests;
+			productName = TeslaTests;
+			productReference = 0015F9DD1C80CD2500179FD9 /* TeslaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		00AA47611C7DB87500B2AD56 /* ServiceLayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00AA47791C7DB87500B2AD56 /* Build configuration list for PBXNativeTarget "ServiceLayer" */;
 			buildPhases = (
+				3C511DEA3481B3571B7CC25E /* Check Pods Manifest.lock */,
 				00AA475E1C7DB87500B2AD56 /* Sources */,
 				00AA475F1C7DB87500B2AD56 /* Frameworks */,
 				00AA47601C7DB87500B2AD56 /* Resources */,
+				9D429C876F21845481B96885 /* Embed Pods Frameworks */,
+				1978DAD948379FFAAD35FA95 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,6 +299,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Techery;
 				TargetAttributes = {
+					0015F9DC1C80CD2500179FD9 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					00AA47611C7DB87500B2AD56 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -189,11 +321,19 @@
 			projectRoot = "";
 			targets = (
 				00AA47611C7DB87500B2AD56 /* ServiceLayer */,
+				0015F9DC1C80CD2500179FD9 /* TeslaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0015F9DB1C80CD2500179FD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00AA47601C7DB87500B2AD56 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,25 +346,147 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1978DAD948379FFAAD35FA95 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ServiceLayer/Pods-ServiceLayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C511DEA3481B3571B7CC25E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		91C4F199F1E8EDDA270AFCE8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9D429C876F21845481B96885 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ServiceLayer/Pods-ServiceLayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4DD7D267C55B3598C170C7A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeslaTests/Pods-TeslaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9086DF715AA0AAC547D3A26 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeslaTests/Pods-TeslaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		0015F9D91C80CD2500179FD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0015F9EE1C80CD6700179FD9 /* TSLServiceMulticastDelegate.mm in Sources */,
+				0015F9EC1C80CD6700179FD9 /* TSLPipe.m in Sources */,
+				0015F9E81C80CD6700179FD9 /* TSLChainer.m in Sources */,
+				0015F9EF1C80CD6700179FD9 /* TSLService.m in Sources */,
+				0015F9E01C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m in Sources */,
+				0015F9ED1C80CD6700179FD9 /* Tesla.m in Sources */,
+				0015F9E71C80CD6700179FD9 /* TSLAction.m in Sources */,
+				0015F9E91C80CD6700179FD9 /* TSLCondition.m in Sources */,
+				0015F9EA1C80CD6700179FD9 /* TSLOperation.m in Sources */,
+				0015F9EB1C80CD6700179FD9 /* TSLOperationState.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00AA475E1C7DB87500B2AD56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0015F9CF1C80B69100179FD9 /* RESTService.m in Sources */,
 				00AA47941C7DC28800B2AD56 /* TSLChainer.m in Sources */,
 				00AA476D1C7DB87500B2AD56 /* ViewController.m in Sources */,
+				0015F9D51C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm in Sources */,
 				00AA476A1C7DB87500B2AD56 /* AppDelegate.m in Sources */,
 				00AA47671C7DB87500B2AD56 /* main.m in Sources */,
 				0015F9BC1C7ECDB000179FD9 /* TSLPipe.m in Sources */,
+				0015F9D81C80BD3A00179FD9 /* TSLService.m in Sources */,
 				00AA478B1C7DBD7F00B2AD56 /* TSLOperationState.m in Sources */,
 				00AA47911C7DC25B00B2AD56 /* TSLAction.m in Sources */,
 				00AA477F1C7DB8F700B2AD56 /* TSLOperation.m in Sources */,
 				0015F9C21C7F98BE00179FD9 /* Tesla.m in Sources */,
+				0015F9D21C80B6C200179FD9 /* XMPPService.m in Sources */,
 				00AA478E1C7DC18200B2AD56 /* TSLCondition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0015F9E31C80CD2500179FD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00AA47611C7DB87500B2AD56 /* ServiceLayer */;
+			targetProxy = 0015F9E21C80CD2500179FD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		00AA476E1C7DB87500B2AD56 /* Main.storyboard */ = {
@@ -248,6 +510,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0015F9E51C80CD2500179FD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF562090362AD92EABAFF5E5 /* Pods-TeslaTests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = TeslaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.techery.TeslaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0015F9E61C80CD2500179FD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EBC71F14171475B9076DDF4 /* Pods-TeslaTests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = TeslaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.techery.TeslaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		00AA47771C7DB87500B2AD56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -330,10 +614,11 @@
 		};
 		00AA477A1C7DB87500B2AD56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF1E13D0690466A1CCF64A10 /* Pods-ServiceLayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ServiceLayer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.techery.ServiceLayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -342,10 +627,11 @@
 		};
 		00AA477B1C7DB87500B2AD56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72331DB89223E3B6BC29C76E /* Pods-ServiceLayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ServiceLayer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.techery.ServiceLayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,6 +641,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0015F9E41C80CD2500179FD9 /* Build configuration list for PBXNativeTarget "TeslaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0015F9E51C80CD2500179FD9 /* Debug */,
+				0015F9E61C80CD2500179FD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00AA475D1C7DB87500B2AD56 /* Build configuration list for PBXProject "ServiceLayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

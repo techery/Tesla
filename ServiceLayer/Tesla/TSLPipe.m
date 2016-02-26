@@ -40,13 +40,13 @@
 }
 
 - (void)dealloc {
-    [self stop];
+    [self stopInternal];
 }
 
 - (void)start {
     dispatch_async(dispatch_get_global_queue(0, 0), ^() {
         self.service = [self.serviceLocator eventServiceForEventClass:self.eventClass];
-        [self.service addDelegate:self];
+        [self.service addEventDelegate:self];
     });
 }
 
@@ -64,8 +64,12 @@
 
 - (void)stop {
     dispatch_async(dispatch_get_global_queue(0, 0), ^() {
-        [self.service removeDelegate:self];
+        [self stopInternal];
     });
+}
+
+- (void)stopInternal {
+    [self.service removeEventDelegate:self];
 }
 
 #pragma mark - TSLEventServiceDelegate
