@@ -13,5 +13,6 @@
 @interface TSLService : NSObject <TSLServiceProtocol>
 
 @property (nonatomic, strong) TSLServiceMulticastDelegate *delegate;
+- (NSString *)serviceId;
 
 @end

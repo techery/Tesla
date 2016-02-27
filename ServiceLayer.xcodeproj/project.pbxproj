@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0015F9BC1C7ECDB000179FD9 /* TSLPipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */; };
 		0015F9C21C7F98BE00179FD9 /* Tesla.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9C11C7F98BE00179FD9 /* Tesla.m */; };
-		0015F9CF1C80B69100179FD9 /* RESTService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9CE1C80B69100179FD9 /* RESTService.m */; };
+		0015F9CF1C80B69100179FD9 /* RESTService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9CE1C80B69100179FD9 /* RESTService.mm */; };
 		0015F9D21C80B6C200179FD9 /* XMPPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D11C80B6C200179FD9 /* XMPPService.m */; };
 		0015F9D51C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */; };
 		0015F9D81C80BD3A00179FD9 /* TSLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D71C80BD3A00179FD9 /* TSLService.m */; };
@@ -23,6 +23,7 @@
 		0015F9ED1C80CD6700179FD9 /* Tesla.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9C11C7F98BE00179FD9 /* Tesla.m */; };
 		0015F9EE1C80CD6700179FD9 /* TSLServiceMulticastDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */; };
 		0015F9EF1C80CD6700179FD9 /* TSLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D71C80BD3A00179FD9 /* TSLService.m */; };
+		0015F9F11C81C5D900179FD9 /* TSLServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9F01C81C5D900179FD9 /* TSLServiceSpec.m */; };
 		00AA47671C7DB87500B2AD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47661C7DB87500B2AD56 /* main.m */; };
 		00AA476A1C7DB87500B2AD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47691C7DB87500B2AD56 /* AppDelegate.m */; };
 		00AA476D1C7DB87500B2AD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA476C1C7DB87500B2AD56 /* ViewController.m */; };
@@ -61,7 +62,7 @@
 		0015F9C11C7F98BE00179FD9 /* Tesla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tesla.m; sourceTree = "<group>"; };
 		0015F9C31C7F9DA900179FD9 /* TSLServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceProtocol.h; sourceTree = "<group>"; };
 		0015F9CD1C80B69100179FD9 /* RESTService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTService.h; sourceTree = "<group>"; };
-		0015F9CE1C80B69100179FD9 /* RESTService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTService.m; sourceTree = "<group>"; };
+		0015F9CE1C80B69100179FD9 /* RESTService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RESTService.mm; sourceTree = "<group>"; };
 		0015F9D01C80B6C200179FD9 /* XMPPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPService.h; sourceTree = "<group>"; };
 		0015F9D11C80B6C200179FD9 /* XMPPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPService.m; sourceTree = "<group>"; };
 		0015F9D31C80BD0A00179FD9 /* TSLServiceMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLServiceMulticastDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		0015F9DD1C80CD2500179FD9 /* TeslaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeslaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TSLServiceMulticastDelegateSpec.mm; sourceTree = "<group>"; };
 		0015F9E11C80CD2500179FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0015F9F01C81C5D900179FD9 /* TSLServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLServiceSpec.m; sourceTree = "<group>"; };
 		00AA47621C7DB87500B2AD56 /* ServiceLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServiceLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AA47661C7DB87500B2AD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00AA47681C7DB87500B2AD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				0015F9CD1C80B69100179FD9 /* RESTService.h */,
-				0015F9CE1C80B69100179FD9 /* RESTService.m */,
+				0015F9CE1C80B69100179FD9 /* RESTService.mm */,
 				0015F9D01C80B6C200179FD9 /* XMPPService.h */,
 				0015F9D11C80B6C200179FD9 /* XMPPService.m */,
 			);
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.mm */,
+				0015F9F01C81C5D900179FD9 /* TSLServiceSpec.m */,
 				0015F9E11C80CD2500179FD9 /* Info.plist */,
 			);
 			path = TeslaTests;
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0015F9EE1C80CD6700179FD9 /* TSLServiceMulticastDelegate.mm in Sources */,
+				0015F9F11C81C5D900179FD9 /* TSLServiceSpec.m in Sources */,
 				0015F9EC1C80CD6700179FD9 /* TSLPipe.m in Sources */,
 				0015F9E81C80CD6700179FD9 /* TSLChainer.m in Sources */,
 				0015F9EF1C80CD6700179FD9 /* TSLService.m in Sources */,
@@ -461,7 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0015F9CF1C80B69100179FD9 /* RESTService.m in Sources */,
+				0015F9CF1C80B69100179FD9 /* RESTService.mm in Sources */,
 				00AA47941C7DC28800B2AD56 /* TSLChainer.m in Sources */,
 				00AA476D1C7DB87500B2AD56 /* ViewController.m in Sources */,
 				0015F9D51C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm in Sources */,

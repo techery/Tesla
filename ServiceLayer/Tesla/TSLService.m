@@ -8,6 +8,12 @@
 
 #import "TSLService.h"
 
+@interface TSLService () {
+    NSString *_serviceId;
+}
+
+@end
+
 @implementation TSLService
 
 - (instancetype)init {
@@ -52,6 +58,13 @@
 - (BOOL)canFireEventsOfClass:(Class<TSLServiceEventProtocol>)eventClass {
     NSAssert(NO, @"%s Should be overriden in subclass", __PRETTY_FUNCTION__);
     return NO;
+}
+
+- (NSString *)serviceId {
+    if (!_serviceId) {
+        _serviceId = [NSString stringWithFormat:@"io.techery.tesla.%@.%p", [self class], self];
+    }
+    return _serviceId;
 }
 
 @end

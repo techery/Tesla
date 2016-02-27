@@ -126,7 +126,96 @@ describe(@"managing delegates", ^() {
         NSUInteger retainCountNew = (NSUInteger)((__bridge void *)[eventDelegateMock1 performSelector:NSSelectorFromString(@"retainCount")]);
         [[theValue(retainCountNew - retainCount) should] equal:theValue(0)];
     });
-#pragma clang diagnostic pop    
+#pragma clang diagnostic pop
+    
+    it(@"should detach request delegate when attached previously", ^() {
+        TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
+        [delegate attachQueryableDelegate:requestDelegateMock1];
+        [delegate detachQueryableDelegate:requestDelegateMock1];
+        XCTAssert(std::find(delegate.requestDelegates->cbegin(),
+                            delegate.requestDelegates->cend(),
+                            requestDelegateMock1) == delegate.requestDelegates->cend());
+    });
+    
+    it(@"should detach request delegate when wasn't attached previously", ^() {
+        TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
+        [delegate detachQueryableDelegate:requestDelegateMock1];
+        XCTAssert(std::find(delegate.requestDelegates->cbegin(),
+                            delegate.requestDelegates->cend(),
+                            requestDelegateMock1) == delegate.requestDelegates->cend());
+    });
+    
+    it(@"should detach event delegate when attached previously", ^() {
+        TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
+        [delegate attachEventDelegate:eventDelegateMock1];
+        [delegate detachEventDelegate:eventDelegateMock1];
+        XCTAssert(std::find(delegate.eventDelegates->cbegin(),
+                            delegate.eventDelegates->cend(),
+                            eventDelegateMock1) == delegate.eventDelegates->cend());
+    });
+    
+    it(@"should detach event delegate when wasn't attached previously", ^() {
+        TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
+        [delegate detachEventDelegate:eventDelegateMock1];
+        XCTAssert(std::find(delegate.eventDelegates->cbegin(),
+                            delegate.eventDelegates->cend(),
+                            eventDelegateMock1) == delegate.eventDelegates->cend());
+    });
+    
+    it(@"should support ARC weak behaviour for request delegate", ^() {
+        TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
+        KWMock<TSLQueryableServiceDelegate> * __unsafe_unretained mockPointer = nil;
+        @autoreleasepool {
+            mockPointer = [KWMock mockForProtocol:@protocol(TSLQueryableServiceDelegate)];
+            [delegate attachQueryableDelegate:mockPointer];
+            XCTAssert(std::find(delegate.requestDelegates->cbegin(),
+                                delegate.requestDelegates->cend(),
+                                mockPointer) != delegate.requestDelegates->cend());
+        }
+        XCTAssert(std::find(delegate.requestDelegates->cbegin(),
+                            delegate.requestDelegates->cend(),
+                            mockPointer) == delegate.requestDelegates->cend());
+    });
+    
+    it(@"should support ARC weak behaviour for event delegate", ^() {
+        TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
+        KWMock<TSLEventServiceDelegate> * __unsafe_unretained mockPointer = nil;
+        @autoreleasepool {
+            mockPointer = [KWMock mockForProtocol:@protocol(TSLEventServiceDelegate)];
+            [delegate attachEventDelegate:mockPointer];
+            XCTAssert(std::find(delegate.eventDelegates->cbegin(),
+                                delegate.eventDelegates->cend(),
+                                mockPointer) != delegate.eventDelegates->cend());
+        }
+        XCTAssert(std::find(delegate.eventDelegates->cbegin(),
+                            delegate.eventDelegates->cend(),
+                            mockPointer) == delegate.eventDelegates->cend());
+    });
+    
+    it(@"should safely broadcast states after one of ARC weak delegates deallocation", ^() {
+        TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
+        KWMock<TSLQueryableServiceDelegate> * __unsafe_unretained mockPointer = nil;
+        @autoreleasepool {
+            mockPointer = [KWMock mockForProtocol:@protocol(TSLQueryableServiceDelegate)];
+            [delegate attachQueryableDelegate:mockPointer];
+            [delegate attachQueryableDelegate:requestDelegateMock1];
+        }
+        [[requestDelegateMock1 should] receive:@selector(service:didChangeState:forRequest:)
+                                 withArguments:serviceMock, operationStateMock, requestMock];
+        [delegate service:serviceMock didChangeState:operationStateMock forRequest:requestMock];
+    });
+    
+    it(@"should safely broadcast event after one of ARC weak delegates deallocation", ^() {
+        TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
+        KWMock<TSLEventServiceDelegate> * __unsafe_unretained mockPointer = nil;
+        @autoreleasepool {
+            mockPointer = [KWMock mockForProtocol:@protocol(TSLEventServiceDelegate)];
+            [delegate attachEventDelegate:mockPointer];
+            [delegate attachEventDelegate:eventDelegateMock1];
+        }
+        [[eventDelegateMock1 should] receive:@selector(service:didFireEvent:)];
+        [delegate service:serviceMock didFireEvent:eventMock];
+    });
 });
 
 SPEC_END
