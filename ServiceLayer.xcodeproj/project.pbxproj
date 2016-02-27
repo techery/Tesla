@@ -13,7 +13,7 @@
 		0015F9D21C80B6C200179FD9 /* XMPPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D11C80B6C200179FD9 /* XMPPService.m */; };
 		0015F9D51C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */; };
 		0015F9D81C80BD3A00179FD9 /* TSLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D71C80BD3A00179FD9 /* TSLService.m */; };
-		0015F9E01C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m */; };
+		0015F9E01C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.mm */; };
 		0015F9E71C80CD6700179FD9 /* TSLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47901C7DC25B00B2AD56 /* TSLAction.m */; };
 		0015F9E81C80CD6700179FD9 /* TSLChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47931C7DC28800B2AD56 /* TSLChainer.m */; };
 		0015F9E91C80CD6700179FD9 /* TSLCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA478D1C7DC18200B2AD56 /* TSLCondition.m */; };
@@ -69,7 +69,7 @@
 		0015F9D61C80BD3A00179FD9 /* TSLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLService.h; sourceTree = "<group>"; };
 		0015F9D71C80BD3A00179FD9 /* TSLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLService.m; sourceTree = "<group>"; };
 		0015F9DD1C80CD2500179FD9 /* TeslaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeslaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSLServiceMulticastDelegateSpec.m; sourceTree = "<group>"; };
+		0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TSLServiceMulticastDelegateSpec.mm; sourceTree = "<group>"; };
 		0015F9E11C80CD2500179FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00AA47621C7DB87500B2AD56 /* ServiceLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServiceLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AA47661C7DB87500B2AD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		0015F9DE1C80CD2500179FD9 /* TeslaTests */ = {
 			isa = PBXGroup;
 			children = (
-				0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m */,
+				0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.mm */,
 				0015F9E11C80CD2500179FD9 /* Info.plist */,
 			);
 			path = TeslaTests;
@@ -448,7 +448,7 @@
 				0015F9EC1C80CD6700179FD9 /* TSLPipe.m in Sources */,
 				0015F9E81C80CD6700179FD9 /* TSLChainer.m in Sources */,
 				0015F9EF1C80CD6700179FD9 /* TSLService.m in Sources */,
-				0015F9E01C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.m in Sources */,
+				0015F9E01C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.mm in Sources */,
 				0015F9ED1C80CD6700179FD9 /* Tesla.m in Sources */,
 				0015F9E71C80CD6700179FD9 /* TSLAction.m in Sources */,
 				0015F9E91C80CD6700179FD9 /* TSLCondition.m in Sources */,

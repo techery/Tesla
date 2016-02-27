@@ -52,24 +52,28 @@
 }
 
 - (void)attachQueryableDelegate:(id<TSLQueryableServiceDelegate>)queryableDelegate {
+    NSAssert([queryableDelegate conformsToProtocol:@protocol(TSLQueryableServiceDelegate)], @"%@ doesn't conform to TSLQueryableServiceDelegate in %s", queryableDelegate, __PRETTY_FUNCTION__);
     OSSpinLockLock(&_requestDelegatesLock);
     self.requestDelegates->push_back(queryableDelegate);
     OSSpinLockUnlock(&_requestDelegatesLock);
 }
 
 - (void)detachQueryableDelegate:(id<TSLQueryableServiceDelegate>)queryableDelegate {
+    NSAssert([queryableDelegate conformsToProtocol:@protocol(TSLQueryableServiceDelegate)], @"%@ doesn't conform to TSLQueryableServiceDelegate in %s", queryableDelegate, __PRETTY_FUNCTION__);
     OSSpinLockLock(&_requestDelegatesLock);
     self.requestDelegates->remove(queryableDelegate);
     OSSpinLockUnlock(&_requestDelegatesLock);
 }
 
 - (void)attachEventDelegate:(id<TSLEventServiceDelegate>)eventDelegate {
+    NSAssert([eventDelegate conformsToProtocol:@protocol(TSLEventServiceDelegate)], @"%@ doesn't conform to TSLEventServiceDelegate in %s", eventDelegate, __PRETTY_FUNCTION__);
     OSSpinLockLock(&_eventDelegatesLock);
     self.eventDelegates->push_back(eventDelegate);
     OSSpinLockUnlock(&_eventDelegatesLock);
 }
 
 - (void)detachEventDelegate:(id<TSLEventServiceDelegate>)eventDelegate {
+    NSAssert([eventDelegate conformsToProtocol:@protocol(TSLEventServiceDelegate)], @"%@ doesn't conform to TSLEventServiceDelegate in %s", eventDelegate, __PRETTY_FUNCTION__);
     OSSpinLockLock(&_eventDelegatesLock);
     self.eventDelegates->remove(eventDelegate);
     OSSpinLockUnlock(&_eventDelegatesLock);
