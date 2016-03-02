@@ -24,13 +24,14 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     __weak typeof(self) weakSelf = self;
     __block void(^errorBlock)() = ^()
     {
         NSString *error = weakSelf.currentOperation.error.localizedDescription;
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.activityIndicator stopAnimating];
-            weakSelf.label.text = [NSString stringWithFormat:@"Loaded %lu events.\n%@", self.loaded, error];
+            weakSelf.label.text = [NSString stringWithFormat:@"Loaded %lu events.\n%@", weakSelf.loaded, error];
         });
     };
     __block void(^sequenceBlock)() = ^()
@@ -60,11 +61,6 @@
                      runBlock:errorBlock];
     [self.currentOperation run];
     [self.activityIndicator startAnimating];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (TSLOperation<RESTRequest *, TSLOperationState *, RESTResponse *> *)operationForPage:(NSUInteger)page {

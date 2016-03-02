@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TSLChainer<Condition, Action> : NSObject
+@interface TSLChainer<Condition, Action, Operation> : NSObject
 
 + (nonnull instancetype)chainerWithCondition:(_Nonnull Condition)condition
-                                      action:(_Nonnull Action)action;
+                                      action:(_Nonnull Action)action
+                             sourceOperation:(_Nonnull Operation)sourceOperation;
 - (nonnull Condition)chainingCondition;
 - (nonnull Action)chainingAction;
+- (nullable Operation)sourceOperation;
 
 @end

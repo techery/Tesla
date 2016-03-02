@@ -11,14 +11,14 @@
 
 @interface TSLAction ()
 
-@property (nonatomic, copy) void(^block)();
-@property (nonatomic, strong) TSLOperation *operation;
+@property (nonatomic, copy, nullable) TSLActionBlock block;
+@property (nonatomic, strong, nullable) TSLOperation *operation;
 
 @end
 
 @implementation TSLAction
 
-+ (instancetype)actionWithBlock:(void (^)())block {
++ (instancetype)actionWithBlock:(TSLActionBlock)block {
     TSLAction *action = [self new];
     action.block = block;
     return action;
@@ -30,14 +30,14 @@
     return action;
 }
 
-- (void)run {
-    [self runBlockIfPossible];
+- (void)runWithSourceOperation:(id)operation {
+    [self runBlockWithSourceOperationIfPossible:operation];
     [self runOperationIfPossible];
 }
 
-- (void)runBlockIfPossible {
+- (void)runBlockWithSourceOperationIfPossible:(id)operation {
     if (self.block) {
-        self.block();
+        self.block(operation);
     }
 }
 

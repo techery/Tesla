@@ -10,17 +10,21 @@
 
 @interface TSLChainer ()
 
-@property (nonatomic, strong) id chainingCondition;
-@property (nonatomic, strong) id chainingAction;
+@property (nonatomic, strong, nonnull) id chainingCondition;
+@property (nonatomic, strong, nonnull) id chainingAction;
+@property (nonatomic, weak, nullable) id sourceOperation;
 
 @end
 
 @implementation TSLChainer
 
-+ (instancetype)chainerWithCondition:(id)condition action:(id)action {
++ (nonnull instancetype)chainerWithCondition:(_Nonnull id)condition
+                                      action:(_Nonnull id)action
+                             sourceOperation:(_Nonnull id)sourceOperation {
     TSLChainer *chainer = [self new];
     chainer.chainingCondition = condition;
     chainer.chainingAction = action;
+    chainer.sourceOperation = sourceOperation;
     return chainer;
 }
 

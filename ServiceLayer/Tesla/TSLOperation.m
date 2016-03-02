@@ -80,7 +80,7 @@
     [self onCondition:condition run:operation];
 }
 
-- (void)on:(TSLOperationState * _Nonnull)state runBlock:(void (^ _Nonnull)())block {
+- (void)on:(TSLOperationState * _Nonnull)state runBlock:(_Nonnull TSLOperationActionBlock)block {
     NSParameterAssert(state);
     NSParameterAssert(block);
     TSLCondition<TSLOperationState *> *condition = [TSLCondition conditionWithSubject:state];
@@ -91,16 +91,46 @@
     NSParameterAssert(condition);
     NSParameterAssert(operation);
     TSLAction *action = [TSLAction actionWithOperation:operation];
-    TSLChainer<TSLCondition *, TSLAction *> *chainer = [TSLChainer chainerWithCondition:condition action:action];
+    TSLChainer<TSLCondition *, TSLAction *, TSLOperation *> *chainer =
+    [TSLChainer chainerWithCondition:condition action:action sourceOperation:self];
     [self.chainers addObject:chainer];
 }
 
-- (void)onCondition:(TSLCondition * _Nonnull)condition runBlock:(void (^ _Nonnull)())block {
+- (void)onCondition:(TSLCondition * _Nonnull)condition runBlock:(_Nonnull TSLOperationActionBlock)block {
     NSParameterAssert(condition);
     NSParameterAssert(block);
     TSLAction *action = [TSLAction actionWithBlock:block];
-    TSLChainer<TSLCondition *, TSLAction *> *chainer = [TSLChainer chainerWithCondition:condition action:action];
+    TSLChainer<TSLCondition *, TSLAction *, TSLOperation *> *chainer =
+    [TSLChainer chainerWithCondition:condition action:action sourceOperation:self];
     [self.chainers addObject:chainer];
+}
+
+- (nonnull TSLOperationOnRunPromise)onRun {
+    return ^(TSLOperationState * _Nonnull state, TSLOperation * _Nonnull operation) {
+        [self on:state run:operation];
+        return self;
+    };
+}
+
+- (nonnull TSLOperationOnRunBlockPromise)onRunBlock {
+    return ^(TSLOperationState * _Nonnull state, _Nonnull TSLOperationActionBlock block) {
+        [self on:state runBlock:block];
+        return self;
+    };
+}
+
+- (nonnull TSLOperationOnConditionRunPromise)onConditionRun {
+    return ^(TSLCondition<TSLOperationState *> * _Nonnull condition, TSLOperation * _Nonnull operation) {
+        [self onCondition:condition run:operation];
+        return self;
+    };
+}
+
+- (nonnull TSLOperationOnConditionRunBlockPromise)onConditionRunBlock {
+    return ^(TSLCondition<TSLOperationState *> * _Nonnull condition, _Nonnull TSLOperationActionBlock block) {
+        [self onCondition:condition runBlock:block];
+        return self;
+    };
 }
 
 #pragma mark - TSLQueryableServiceDelegate
@@ -120,9 +150,9 @@
 #pragma mark - State handling
 
 - (void)verifyChainersAgainstState:(TSLOperationState *)currentState {
-    for (TSLChainer<TSLCondition *, TSLAction *> *chainer in self.chainers) {
+    for (TSLChainer<TSLCondition *, TSLAction *, TSLOperation *> *chainer in self.chainers) {
         if ([chainer.chainingCondition evaluateAgainstState:currentState]) {
-            [chainer.chainingAction run];
+            [chainer.chainingAction runWithSourceOperation:self];
         }
     }
 }

@@ -10,10 +10,12 @@
 
 @class TSLOperation;
 
-@interface TSLAction : NSObject
+@interface TSLAction<Operation> : NSObject
 
-+ (instancetype)actionWithOperation:(TSLOperation *)operation;
-+ (instancetype)actionWithBlock:(void(^)())block;
-- (void)run;
+typedef void(^TSLActionBlock)(_Nonnull Operation);
+
++ (nonnull instancetype)actionWithOperation:(_Nonnull Operation)operation;
++ (nonnull instancetype)actionWithBlock:(_Nonnull TSLActionBlock)block;
+- (void)runWithSourceOperation:(_Nonnull Operation)operation;
 
 @end
