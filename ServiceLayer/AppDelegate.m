@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "RESTService.h"
+#import "Tesla.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    RESTService *service = [RESTService serviceWithBaseURL:[NSURL URLWithString:@"https://api.import.io/store/connector/7400712a-7f34-4322-8184-e9e56be6d092"]];
+    [[Tesla sharedInstance] registerQueryableService:service];
     return YES;
 }
 

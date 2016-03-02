@@ -24,6 +24,8 @@
 		0015F9EE1C80CD6700179FD9 /* TSLServiceMulticastDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */; };
 		0015F9EF1C80CD6700179FD9 /* TSLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9D71C80BD3A00179FD9 /* TSLService.m */; };
 		0015F9F11C81C5D900179FD9 /* TSLServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9F01C81C5D900179FD9 /* TSLServiceSpec.m */; };
+		0015F9F41C820E2A00179FD9 /* RESTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9F31C820E2A00179FD9 /* RESTRequest.m */; };
+		0015F9F71C820F7100179FD9 /* RESTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0015F9F61C820F7100179FD9 /* RESTResponse.m */; };
 		00AA47671C7DB87500B2AD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47661C7DB87500B2AD56 /* main.m */; };
 		00AA476A1C7DB87500B2AD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47691C7DB87500B2AD56 /* AppDelegate.m */; };
 		00AA476D1C7DB87500B2AD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA476C1C7DB87500B2AD56 /* ViewController.m */; };
@@ -36,7 +38,6 @@
 		00AA47911C7DC25B00B2AD56 /* TSLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47901C7DC25B00B2AD56 /* TSLAction.m */; };
 		00AA47941C7DC28800B2AD56 /* TSLChainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47931C7DC28800B2AD56 /* TSLChainer.m */; };
 		5BB3051934BC735D8F56CC66 /* Pods_TeslaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB022CE39EB663A0307EE85 /* Pods_TeslaTests.framework */; };
-		C08BEF7BF562FF43C59507BE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3E45970EBC0A5F58D7B02A /* Pods.framework */; };
 		E56FCE2D47735F1EE14405C1 /* Pods_ServiceLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153ED911A6DB8111E22DFE45 /* Pods_ServiceLayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,10 @@
 		0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TSLServiceMulticastDelegateSpec.mm; sourceTree = "<group>"; };
 		0015F9E11C80CD2500179FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0015F9F01C81C5D900179FD9 /* TSLServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLServiceSpec.m; sourceTree = "<group>"; };
+		0015F9F21C820E2A00179FD9 /* RESTRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTRequest.h; sourceTree = "<group>"; };
+		0015F9F31C820E2A00179FD9 /* RESTRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTRequest.m; sourceTree = "<group>"; };
+		0015F9F51C820F7100179FD9 /* RESTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTResponse.h; sourceTree = "<group>"; };
+		0015F9F61C820F7100179FD9 /* RESTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTResponse.m; sourceTree = "<group>"; };
 		00AA47621C7DB87500B2AD56 /* ServiceLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServiceLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AA47661C7DB87500B2AD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00AA47681C7DB87500B2AD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,7 +107,6 @@
 		72331DB89223E3B6BC29C76E /* Pods-ServiceLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceLayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ServiceLayer/Pods-ServiceLayer.release.xcconfig"; sourceTree = "<group>"; };
 		BF562090362AD92EABAFF5E5 /* Pods-TeslaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeslaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeslaTests/Pods-TeslaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF1E13D0690466A1CCF64A10 /* Pods-ServiceLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceLayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ServiceLayer/Pods-ServiceLayer.debug.xcconfig"; sourceTree = "<group>"; };
-		EA3E45970EBC0A5F58D7B02A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C08BEF7BF562FF43C59507BE /* Pods.framework in Frameworks */,
 				E56FCE2D47735F1EE14405C1 /* Pods_ServiceLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,32 +132,116 @@
 		0015F9CC1C80B65F00179FD9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				0015F9CD1C80B69100179FD9 /* RESTService.h */,
-				0015F9CE1C80B69100179FD9 /* RESTService.mm */,
-				0015F9D01C80B6C200179FD9 /* XMPPService.h */,
-				0015F9D11C80B6C200179FD9 /* XMPPService.m */,
+				0015F9FC1C86F43300179FD9 /* REST */,
+				0015F9FD1C86F43700179FD9 /* XMPP */,
 			);
-			name = Services;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		0015F9DE1C80CD2500179FD9 /* TeslaTests */ = {
 			isa = PBXGroup;
 			children = (
+				0015F9E11C80CD2500179FD9 /* Info.plist */,
 				0015F9DF1C80CD2500179FD9 /* TSLServiceMulticastDelegateSpec.mm */,
 				0015F9F01C81C5D900179FD9 /* TSLServiceSpec.m */,
-				0015F9E11C80CD2500179FD9 /* Info.plist */,
 			);
 			path = TeslaTests;
+			sourceTree = "<group>";
+		};
+		0015F9F81C86F41000179FD9 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				0015F9F21C820E2A00179FD9 /* RESTRequest.h */,
+				0015F9F31C820E2A00179FD9 /* RESTRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		0015F9FA1C86F42200179FD9 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				0015F9F51C820F7100179FD9 /* RESTResponse.h */,
+				0015F9F61C820F7100179FD9 /* RESTResponse.m */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		0015F9FB1C86F42900179FD9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0015F9CD1C80B69100179FD9 /* RESTService.h */,
+				0015F9CE1C80B69100179FD9 /* RESTService.mm */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0015F9FC1C86F43300179FD9 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				0015FA021C86F47600179FD9 /* Events */,
+				0015F9F81C86F41000179FD9 /* Requests */,
+				0015F9FA1C86F42200179FD9 /* Responses */,
+				0015F9FB1C86F42900179FD9 /* Service */,
+			);
+			path = REST;
+			sourceTree = "<group>";
+		};
+		0015F9FD1C86F43700179FD9 /* XMPP */ = {
+			isa = PBXGroup;
+			children = (
+				0015FA011C86F47200179FD9 /* Events */,
+				0015FA001C86F46700179FD9 /* Requests */,
+				0015F9FF1C86F45F00179FD9 /* Responses */,
+				0015F9FE1C86F45500179FD9 /* Service */,
+			);
+			path = XMPP;
+			sourceTree = "<group>";
+		};
+		0015F9FE1C86F45500179FD9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0015F9D01C80B6C200179FD9 /* XMPPService.h */,
+				0015F9D11C80B6C200179FD9 /* XMPPService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0015F9FF1C86F45F00179FD9 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		0015FA001C86F46700179FD9 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		0015FA011C86F47200179FD9 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		0015FA021C86F47600179FD9 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		00AA47591C7DB87500B2AD56 = {
 			isa = PBXGroup;
 			children = (
-				0015F9DE1C80CD2500179FD9 /* TeslaTests */,
+				56FD12EC428A91EF771E7E3E /* Frameworks */,
+				2E44BE45F5A201C1DA22E8BE /* Pods */,
 				00AA47631C7DB87500B2AD56 /* Products */,
 				00AA47641C7DB87500B2AD56 /* ServiceLayer */,
-				2E44BE45F5A201C1DA22E8BE /* Pods */,
-				56FD12EC428A91EF771E7E3E /* Frameworks */,
+				0015F9DE1C80CD2500179FD9 /* TeslaTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,17 +299,17 @@
 				0015F9BB1C7ECDB000179FD9 /* TSLPipe.m */,
 				00AA479A1C7DE2A400B2AD56 /* TSLQueryableServiceDelegate.h */,
 				00AA47991C7DE29500B2AD56 /* TSLQueryableServiceProtocol.h */,
-				0015F9C31C7F9DA900179FD9 /* TSLServiceProtocol.h */,
+				0015F9D61C80BD3A00179FD9 /* TSLService.h */,
+				0015F9D71C80BD3A00179FD9 /* TSLService.m */,
 				0015F9B71C7ECAB800179FD9 /* TSLServiceEventProtocol.h */,
 				00AA47981C7DE27D00B2AD56 /* TSLServiceLocatorProtocol.h */,
+				0015F9D31C80BD0A00179FD9 /* TSLServiceMulticastDelegate.h */,
+				0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */,
+				0015F9C31C7F9DA900179FD9 /* TSLServiceProtocol.h */,
 				0015F9B51C7EC90900179FD9 /* TSLServiceRequestProtocol.h */,
 				0015F9B61C7EC91A00179FD9 /* TSLServiceResponseProtocol.h */,
 				0015F9C01C7F98BE00179FD9 /* Tesla.h */,
 				0015F9C11C7F98BE00179FD9 /* Tesla.m */,
-				0015F9D31C80BD0A00179FD9 /* TSLServiceMulticastDelegate.h */,
-				0015F9D41C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm */,
-				0015F9D61C80BD3A00179FD9 /* TSLService.h */,
-				0015F9D71C80BD3A00179FD9 /* TSLService.m */,
 			);
 			path = Tesla;
 			sourceTree = "<group>";
@@ -241,7 +328,6 @@
 		56FD12EC428A91EF771E7E3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EA3E45970EBC0A5F58D7B02A /* Pods.framework */,
 				153ED911A6DB8111E22DFE45 /* Pods_ServiceLayer.framework */,
 				2BB022CE39EB663A0307EE85 /* Pods_TeslaTests.framework */,
 			);
@@ -470,6 +556,8 @@
 				00AA476D1C7DB87500B2AD56 /* ViewController.m in Sources */,
 				0015F9D51C80BD0A00179FD9 /* TSLServiceMulticastDelegate.mm in Sources */,
 				00AA476A1C7DB87500B2AD56 /* AppDelegate.m in Sources */,
+				0015F9F41C820E2A00179FD9 /* RESTRequest.m in Sources */,
+				0015F9F71C820F7100179FD9 /* RESTResponse.m in Sources */,
 				00AA47671C7DB87500B2AD56 /* main.m in Sources */,
 				0015F9BC1C7ECDB000179FD9 /* TSLPipe.m in Sources */,
 				0015F9D81C80BD3A00179FD9 /* TSLService.m in Sources */,

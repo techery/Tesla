@@ -91,9 +91,9 @@ describe(@"managing delegates", ^() {
         TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
         [delegate attachQueryableDelegate:requestDelegateMock1];
         [delegate attachQueryableDelegate:requestDelegateMock2];
-        [[requestDelegateMock1 should] receive:@selector(service:didChangeState:forRequest:)
+        [[requestDelegateMock1 shouldEventuallyBeforeTimingOutAfter(0.01)] receive:@selector(service:didChangeState:forRequest:)
                                  withArguments:serviceMock, operationStateMock, requestMock];
-        [[requestDelegateMock2 should] receive:@selector(service:didChangeState:forRequest:)
+        [[requestDelegateMock2 shouldEventuallyBeforeTimingOutAfter(0.01)] receive:@selector(service:didChangeState:forRequest:)
                                  withArguments:serviceMock, operationStateMock, requestMock];
         [delegate service:serviceMock didChangeState:operationStateMock forRequest:requestMock];
     });
@@ -102,9 +102,9 @@ describe(@"managing delegates", ^() {
         TSLServiceMulticastDelegate *delegate = [TSLServiceMulticastDelegate new];
         [delegate attachEventDelegate:eventDelegateMock1];
         [delegate attachEventDelegate:eventDelegateMock2];
-        [[eventDelegateMock1 should] receive:@selector(service:didFireEvent:)
+        [[eventDelegateMock1 shouldEventuallyBeforeTimingOutAfter(0.01)] receive:@selector(service:didFireEvent:)
                                  withArguments:serviceMock, eventMock];
-        [[eventDelegateMock2 should] receive:@selector(service:didFireEvent:)
+        [[eventDelegateMock2 shouldEventuallyBeforeTimingOutAfter(0.01)] receive:@selector(service:didFireEvent:)
                                  withArguments:serviceMock, eventMock];
         [delegate service:serviceMock didFireEvent:eventMock];
     });
@@ -200,7 +200,7 @@ describe(@"managing delegates", ^() {
             [delegate attachQueryableDelegate:mockPointer];
             [delegate attachQueryableDelegate:requestDelegateMock1];
         }
-        [[requestDelegateMock1 should] receive:@selector(service:didChangeState:forRequest:)
+        [[requestDelegateMock1 shouldEventuallyBeforeTimingOutAfter(0.01)] receive:@selector(service:didChangeState:forRequest:)
                                  withArguments:serviceMock, operationStateMock, requestMock];
         [delegate service:serviceMock didChangeState:operationStateMock forRequest:requestMock];
     });
@@ -213,7 +213,7 @@ describe(@"managing delegates", ^() {
             [delegate attachEventDelegate:mockPointer];
             [delegate attachEventDelegate:eventDelegateMock1];
         }
-        [[eventDelegateMock1 should] receive:@selector(service:didFireEvent:)];
+        [[eventDelegateMock1 shouldEventuallyBeforeTimingOutAfter(0.01)] receive:@selector(service:didFireEvent:)];
         [delegate service:serviceMock didFireEvent:eventMock];
     });
 });

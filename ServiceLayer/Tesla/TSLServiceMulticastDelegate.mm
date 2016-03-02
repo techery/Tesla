@@ -37,7 +37,9 @@
      forRequest:(id<TSLServiceRequestProtocol>)request {
     OSSpinLockLock(&_requestDelegatesLock);
     for (auto delegate : *self.requestDelegates) {
-        [delegate service:service didChangeState:state forRequest:request];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^() {
+            [delegate service:service didChangeState:state forRequest:request];
+        });
     }
     OSSpinLockUnlock(&_requestDelegatesLock);
 }
@@ -46,7 +48,9 @@
    didFireEvent:(id<TSLServiceEventProtocol>)event {
     OSSpinLockLock(&_eventDelegatesLock);
     for (auto delegate : *self.eventDelegates) {
-        [delegate service:service didFireEvent:event];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^() {
+            [delegate service:service didFireEvent:event];
+        });
     }
     OSSpinLockUnlock(&_eventDelegatesLock);
 }

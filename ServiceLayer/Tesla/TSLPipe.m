@@ -39,10 +39,6 @@
     return pipe;
 }
 
-- (void)dealloc {
-    [self stopInternal];
-}
-
 - (void)start {
     dispatch_async(dispatch_get_global_queue(0, 0), ^() {
         self.service = [self.serviceLocator eventServiceForEventClass:self.eventClass];
@@ -64,12 +60,8 @@
 
 - (void)stop {
     dispatch_async(dispatch_get_global_queue(0, 0), ^() {
-        [self stopInternal];
+        [self.service removeEventDelegate:self];
     });
-}
-
-- (void)stopInternal {
-    [self.service removeEventDelegate:self];
 }
 
 #pragma mark - TSLEventServiceDelegate

@@ -10,6 +10,8 @@
 #import <AFNetworking/AFNetworking.h>
 
 #import "TSLService.h"
+#import "TSLServiceRequestProtocol.h"
+#import "TSLServiceResponseProtocol.h"
 
 typedef struct RESTHTTPMethodStruct {
     __unsafe_unretained NSString *GET;
@@ -19,7 +21,7 @@ typedef struct RESTHTTPMethodStruct {
     __unsafe_unretained NSString *DELETE;
 } RESTHTTPMethodStruct;
 
-@protocol RESTServiceResponseProtocol <NSObject>
+@protocol RESTServiceResponseProtocol <TSLServiceResponseProtocol>
 
 - (id)serializedResponseBody;
 - (NSData *)deserializedResponseBody;
@@ -29,15 +31,13 @@ typedef struct RESTHTTPMethodStruct {
 
 @protocol RESTServiceRequestProtocol <TSLServiceRequestProtocol>
 
-@required
 - (NSString *)path;
 - (NSString *)method;
+- (NSDictionary *)parameters;
 
 @property (nonatomic, strong) id<RESTServiceResponseProtocol> associatedResponse;
 @property (nonatomic, strong) NSError *error;
 
-@optional
-- (NSDictionary *)parameters;
 
 @end
 

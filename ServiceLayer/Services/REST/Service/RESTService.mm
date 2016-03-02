@@ -8,6 +8,8 @@
 
 #import "RESTService.h"
 #import "TSLOperationState.h"
+#import "RESTRequest.h"
+#import "RESTResponse.h"
 #import <map>
 
 const struct RESTHTTPMethodStruct RESTHTTPMethod = {
@@ -62,12 +64,21 @@ const struct RESTHTTPMethodStruct RESTHTTPMethod = {
     [dataTask cancel];
 }
 
+- (BOOL)canHandleRequest:(id<TSLServiceRequestProtocol>)request
+                response:(id<TSLServiceResponseProtocol>)response {
+    return [request conformsToProtocol:@protocol(TSLServiceRequestProtocol)] &&
+            (!response || [response conformsToProtocol:@protocol(TSLServiceResponseProtocol)]);
+}
+
 #pragma mark - helper
 
-- (void)performGETRequestWithRequest:(id<RESTServiceRequestProtocol>)request
-                    responseTemplate:(id<RESTServiceResponseProtocol>)responseTemplate {
+- (void)performGETRequestWithRequest:(RESTRequest *)request
+                    responseTemplate:(RESTResponse *)responseTemplate {
     if (responseTemplate) {
         request.associatedResponse = responseTemplate;
+    }
+    else {
+        request.associatedResponse = [RESTResponse new];
     }
     (*self.taskMap)[request] = [self.sessionManager GET:[request path]
                                              parameters:[request parameters]
@@ -79,7 +90,7 @@ const struct RESTHTTPMethodStruct RESTHTTPMethod = {
     }
                      success:^(NSURLSessionDataTask *task, id responseObject)
     {
-        
+        request.associatedResponse.serializedResponseBody = responseObject;
         [self.delegate service:self
                 didChangeState:[TSLOperationState stateWithProgress:1 stateValue:TSLOperationStateCompleted]
                     forRequest:request];

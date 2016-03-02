@@ -60,7 +60,9 @@
 }
 
 - (BOOL)isEqual:(TSLOperationState *)obj {
-    return ([obj isKindOfClass:[self class]] && self.stateValue == obj.stateValue && self.progress == obj.progress);
+    return ([obj isKindOfClass:[self class]] &&
+                ((self.stateValue == TSLOperationStateStarted && obj.stateValue == TSLOperationStateStarted && self.progress == obj.progress) ||
+                 (self.stateValue == obj.stateValue && self.stateValue != TSLOperationStateStarted)));
 }
 
 @end

@@ -53,7 +53,7 @@
 }
 
 - (void)dealloc {
-    [self cancelInternal];
+    [self.service cancelRequest:self.executingRequest];
 }
 
 - (void)run {
@@ -68,32 +68,36 @@
 
 - (void)cancel {
     dispatch_async(dispatch_get_global_queue(0, 0), ^() {
-        [self cancelInternal];
+        [self.service cancelRequest:self.executingRequest];
+        [self.service removeRequestDelegate:self];
     });
 }
 
-- (void)cancelInternal {
-    [self.service cancelRequest:self.executingRequest];
-    [self.service removeRequestDelegate:self];
-}
-
-- (void)on:(TSLOperationState *)state run:(TSLOperation *)operation {
+- (void)on:(TSLOperationState * _Nonnull)state run:(TSLOperation * _Nonnull)operation {
+    NSParameterAssert(state);
+    NSParameterAssert(operation);
     TSLCondition<TSLOperationState *> *condition = [TSLCondition conditionWithSubject:state];
     [self onCondition:condition run:operation];
 }
 
-- (void)on:(TSLOperationState *)state runBlock:(void (^)())block {
+- (void)on:(TSLOperationState * _Nonnull)state runBlock:(void (^ _Nonnull)())block {
+    NSParameterAssert(state);
+    NSParameterAssert(block);
     TSLCondition<TSLOperationState *> *condition = [TSLCondition conditionWithSubject:state];
     [self onCondition:condition runBlock:block];
 }
 
-- (void)onCondition:(TSLCondition *)condition run:(TSLOperation *)operation {
+- (void)onCondition:(TSLCondition * _Nonnull)condition run:(TSLOperation * _Nonnull)operation {
+    NSParameterAssert(condition);
+    NSParameterAssert(operation);
     TSLAction *action = [TSLAction actionWithOperation:operation];
     TSLChainer<TSLCondition *, TSLAction *> *chainer = [TSLChainer chainerWithCondition:condition action:action];
     [self.chainers addObject:chainer];
 }
 
-- (void)onCondition:(TSLCondition *)condition runBlock:(void (^)())block {
+- (void)onCondition:(TSLCondition * _Nonnull)condition runBlock:(void (^ _Nonnull)())block {
+    NSParameterAssert(condition);
+    NSParameterAssert(block);
     TSLAction *action = [TSLAction actionWithBlock:block];
     TSLChainer<TSLCondition *, TSLAction *> *chainer = [TSLChainer chainerWithCondition:condition action:action];
     [self.chainers addObject:chainer];
